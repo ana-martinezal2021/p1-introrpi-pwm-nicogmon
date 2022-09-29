@@ -1,0 +1,10 @@
+import RPi.GPIO as GPIO
+GPIO.setmode (GPIO.BCM)
+GPIO.setup (2, GPIO.OUT)
+pwm = GPIO.PWM(2, 100)
+pwm.start (50)
+pwm.ChangeDutyCycle(100)
+pwm.ChangeFrequency(1000)
+input("Ejecutando hasta que pulse una tecla")
+pwm.stop()
+GPIO.cleanup() 
